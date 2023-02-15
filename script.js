@@ -1,8 +1,8 @@
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
-const URL = "https://teachablemachine.withgoogle.com/models/cAITszk9h/";
-
+// const URL = "https://teachablemachine.withgoogle.com/models/cAITszk9h/";
+const URL = '/model/'
 
 let model, labelContainer, maxPredictions, highestPrediction 
 
@@ -72,7 +72,12 @@ submitUploadedImage.addEventListener('click', function () {
 }) 
 
 // on change of input file - show image
-uploadInput.addEventListener('change', (e) => {
+uploadInput.addEventListener('change', (e) => { 
+    
+    if ( fileValidation() == false) {
+        return false;
+    }
+
     const url = webkitURL.createObjectURL(e.target.files[0])
     img.src = url 
     showInputImage.style.backgroundImage = 'url(' + url + ')' 
@@ -88,5 +93,23 @@ reset.addEventListener('click', () => {
 const getResult = () => {
     resultContainer.style.backgroundImage = 'url(results/result-' + result + '.png)'
     resultName.innerHTML = 'Podobáš se </br>' + result
+}
+
+// file format validation 
+const fileValidation = () => {
+    var fileInput =
+        document.getElementById('input_file');
+     
+    var filePath = fileInput.value;
+ 
+    // Allowing file type
+    var allowedExtensions =
+            /(\.jpg|\.jpeg|\.png)$/i;
+     
+    if (!allowedExtensions.exec(filePath)) {
+        alert('Nesprávný formát obrázku');
+        fileInput.value = '';
+        return false; 
+    }
 }
 
