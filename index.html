@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id = "overlay"></div>
+
+    <h1 class = "text-center">Komu ze Simpsonů se podobáš nejvíc?</h1>
+
+
+    <div class = "" id = "two-blocks">
+
+        <label for = "input_file" id = "input" class = "img-wrapper">
+            Přidej obrázek
+            <img class = "icon" src = "upload_icon.png">
+            <input type = "file" id = "input_file" accept = "image/png, image/jpg, image/gif, image/jpeg">
+        </label>
+
+        <div class = "" id = "result">
+            <h1 id = "result_name"></h1>
+        </div>
+
+        <div id = "buttons">
+            <input id = "submit" type = "button" value = "Spustit">
+            <input id = "reset" type = "submit" value = "Resetovat">
+        </div>
+        <div class = "lds-ring" id = "lds-ring"><div></div><div></div><div></div><div></div></div>
+
+    </div>
+
+    <!-- this has to be here or it doesnt work -->
+    <img id = "img" src = "" style = "display: none;">
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript" src = "script.js"></script>
+
+
+</body>
+</html>
