@@ -75,6 +75,7 @@ submitUploadedImage.addEventListener('click', function () {
 uploadInput.addEventListener('change', (e) => { 
     
     if ( fileValidation() == false) {
+        console.log('wrong input type'); 
         return false;
     }
 
