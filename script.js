@@ -1,8 +1,8 @@
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
-// const URL = "https://teachablemachine.withgoogle.com/models/cAITszk9h/";
-const URL = '/model/'
+const URL = "https://teachablemachine.withgoogle.com/models/cAITszk9h/";
+// const URL = '/model/'
 
 let model, labelContainer, maxPredictions, highestPrediction 
 
